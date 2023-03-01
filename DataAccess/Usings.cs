@@ -1,0 +1,10 @@
+﻿global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore;
+global using Core.Entities.Concrete;
+global using Core.DataAccess.Abstract;
+global using DataAccess.Context;
+global using Entities.Concrete;
+global using Core.DataAccess.Concrete;
+global using DataAccess.Repositories.Abstract;
+global using Microsoft.EntityFrameworkCore.Migrations;
+global using Microsoft.EntityFrameworkCore.Infrastructure;

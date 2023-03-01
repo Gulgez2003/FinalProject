@@ -1,0 +1,94 @@
+﻿@model RegisterDto
+@{
+    ViewData["Title"] = "Register";
+}
+<div class="container">
+    <section class="h-100 h-custom" style="background-color: #dfa974;">
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="card rounded-3">
+                        <img src="~/assets/img/hero/hero-3.jpg"
+                             class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                             alt="Sample photo">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
+
+                            <form method="post" class="mx-1 mx-md-2">
+                                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                                <div class="d-flex flex-row align-items-center mb-4">
+                                    <i class="fa fa-user fa-lg me-3 fa-fw mb-4"></i>
+                                    <div class="form-outline flex-fill mb-0">
+                                        <span asp-validation-for="@Model.FullName" class="text-danger"></span>
+                                        <input type="text" asp-for="@Model.FullName" class="form-control" />
+                                        <label class="form-label" for="form3Example1c">Fullname</label>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-row align-items-center mb-4">
+                                    <i class="fa fa-user fa-lg me-3 fa-fw mb-4"></i>
+                                    <div class="form-outline flex-fill mb-0">
+                                        <span asp-validation-for="@Model.UserName" class="text-danger"></span>
+                                        <input type="text" asp-for="@Model.UserName" class="form-control" />
+                                        <label class="form-label" for="form3Example1c">Username</label>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-row align-items-center mb-4">
+                                    <i class="fa fa-envelope fa-lg me-3 fa-fw mb-4"></i>
+                                    <div class="form-outline flex-fill mb-0">
+                                        <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                                        <input type="email" asp-for="@Model.Email" class="form-control" />
+                                        <label class="form-label" for="form3Example3c">Email</label>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-row align-items-center mb-4">
+                                    <i class="fa fa-lock fa-lg me-3 fa-fw mb-4"></i>
+                                    <div class="form-outline flex-fill mb-0">
+                                        <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                                        <input type="password" asp-for="@Model.Password" class="form-control" required="" />
+                                        <label class="form-label" for="form3Example4c">Password</label>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-row align-items-center mb-4">
+                                    <i class="fa fa-key fa-lg me-3 fa-fw mb-4"></i>
+                                    <div class="form-outline flex-fill mb-0">
+                                        <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                                        <input type="password" asp-for="@Model.Password" class="form-control" required="" />
+                                        <label class="form-label" for="form3Example4cd">Repeat your password</label>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                    <button type="submit" class="btn btn-primary btn-lg submitbtn">Register</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+@*<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    const btns = document.querySelectorAll(".submitbtn");
+    btns.forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Your verification link has been sent. Please, verify your email',
+                showConfirmButton: false,
+                timer: 4000
+            })
+        })
+    })
+</script>*@

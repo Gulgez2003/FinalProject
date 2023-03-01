@@ -1,0 +1,54 @@
+﻿@model LoginDto
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="container">
+    <section style="background-color: #dfa974;">
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+
+                            <h3 class="mb-5">Sign in</h3>
+                            <form method="post">
+                                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                                <div class="form-outline mb-4">
+                                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                                    <input type="email" asp-for="@Model.Email" class="form-control form-control-lg" />
+                                    <label class="form-label" for="typeEmailX-2">Email</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                                    <input type="password" asp-for="@Model.Password" class="form-control form-control-lg" />
+                                    <label class="form-label" for="typePasswordX-2">Password</label>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col d-flex justify-content-center">
+                                        <!-- Checkbox -->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" asp-for="@Model.RememberMe" checked />
+                                            <label class="form-check-label" for="form2Example31"> Remember me </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <!-- Simple link -->
+                                        <a asp-action="ForgotPassword" asp-controller="Account">Forgot password?</a>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                                <div class="text-center mt-4">
+                                    <p>Don't have an account? <a asp-action="Register" asp-controller="Account">Register</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

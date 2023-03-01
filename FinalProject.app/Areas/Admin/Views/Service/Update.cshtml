@@ -1,0 +1,35 @@
+﻿@model ServiceUpdateDto
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="conatiner-fluid content-inner mt-5 py-0">
+    <div class="header-title">
+        <h4 class="card-title">Update Service</h4>
+    </div>
+    <hr />
+    <div>
+        <div class="bd-example">
+            <form method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="@Model.serviceGetDto.Id" />
+                <div class="mb-3">
+                    <label asp-for="@Model.servicePostDto.Name" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.servicePostDto.Name" value="@Model.serviceGetDto.Name">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.servicePostDto.Description" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.servicePostDto.Description" value="@Model.serviceGetDto.Description">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.servicePostDto.Icon" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.servicePostDto.Icon" value="@Model.serviceGetDto.Icon">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button asp-controller="Service" asp-action="Index" class="btn btn-light">Back to List</button>
+            </form>
+        </div>
+    </div>
+</div>
+

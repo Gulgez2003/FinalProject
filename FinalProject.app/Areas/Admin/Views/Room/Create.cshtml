@@ -1,0 +1,60 @@
+﻿@model RoomPostDto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="conatiner-fluid content-inner mt-5 py-0">
+    <div class="header-title">
+        <h4 class="card-title">Create Room</h4>
+    </div>
+    <hr />
+    <div>
+        <div class="bd-example">
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label asp-for="@Model.Title" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.Title">
+                    <span asp-validation-for="@Model.Title" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Price" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.Price">
+                    <span asp-validation-for="@Model.Price" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Size" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.Size">
+                    <span asp-validation-for="@Model.Size" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Capacity" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.Capacity">
+                    <span asp-validation-for="@Model.Capacity" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.BedType" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.BedType">
+                    <span asp-validation-for="@Model.BedType" class="text-danger"></span>
+                </div>
+                 <div class="mb-3">
+                    <label asp-for="@Model.Services" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.Services">
+                    <span asp-validation-for="@Model.Services" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Description" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.Description">
+                    <span asp-validation-for="@Model.Description" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Upload File</label>
+                    <input type="file" class="form-control" accept="image/*" asp-for="@Model.File">
+                    <span asp-validation-for="@Model.File" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button asp-controller="Room" asp-action="Index" class="btn btn-light">Back to List</button>
+            </form>
+        </div>
+    </div>
+</div>

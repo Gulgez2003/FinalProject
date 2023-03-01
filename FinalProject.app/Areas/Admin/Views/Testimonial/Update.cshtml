@@ -1,0 +1,31 @@
+﻿@model TestimonialUpdateDto
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="conatiner-fluid content-inner mt-5 py-0">
+    <div class="header-title">
+        <h4 class="card-title">Update Testimonial</h4>
+    </div>
+    <hr />
+    <div>
+        <div class="bd-example">
+            <form method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="@Model.testimonialGetDto.Id" />
+                <div class="mb-3">
+                    <label asp-for="@Model.testimonialPostDto.Comment" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.testimonialPostDto.Comment" value="@Model.testimonialGetDto.Comment">
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.testimonialPostDto.CustomerName" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.testimonialPostDto.CustomerName" value="@Model.testimonialGetDto.CustomerName">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button asp-controller="Testimonial" asp-action="Index" class="btn btn-light">Back to List</button>
+            </form>
+        </div>
+    </div>
+</div>
+

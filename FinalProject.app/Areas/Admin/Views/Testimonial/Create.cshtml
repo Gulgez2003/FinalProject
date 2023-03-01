@@ -1,0 +1,30 @@
+﻿@model TestimonialPostDto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="conatiner-fluid content-inner mt-5 py-0">
+    <div class="header-title">
+        <h4 class="card-title">Add Testimonial</h4>
+    </div>
+    <hr />
+    <div>
+        <div class="bd-example">
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label asp-for="@Model.Comment" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.Comment">
+                    <span asp-validation-for="@Model.Comment" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.CustomerName" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.CustomerName">
+                    <span asp-validation-for="@Model.CustomerName" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button asp-controller="Testimonial" asp-action="Index" class="btn btn-light">Back to List</button>
+            </form>
+        </div>
+    </div>
+</div>

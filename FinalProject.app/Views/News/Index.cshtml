@@ -1,0 +1,43 @@
+﻿@model List<BlogGetDto>
+@{
+    ViewData["Title"] = "News Page";
+}
+
+<!-- Breadcrumb Section Begin -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-text">
+                    <h2>Blog</h2>
+                    <div class="bt-option">
+                        <a href="./home.html">Home</a>
+                        <span>Blog Grid</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb Section End -->
+<!-- Blog Section Begin -->
+<section class="blog-section blog-page spad">
+    <div class="container">
+        <div class="row blogs">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-item set-bg" data-setbg="assets/img/@item.ImageName">
+                        <div class="bi-text">
+                            <span class="b-tag">@item.Name</span>
+                            <h4><a asp-action="Index" asp-controller="BlogDetails">@item.Description</a></h4>
+                            <div class="b-time"><i class="icon_clock_alt"></i> @item.DateTime</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Blog Section End -->

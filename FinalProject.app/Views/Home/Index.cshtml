@@ -1,0 +1,354 @@
+﻿@model ServiceTestimonialVM
+<!-- Hero Section Begin -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hero-text">
+                    <h1>Sirius A Luxury Hotel</h1>
+                    <p>
+                        Here are the best hotel booking sites, including recommendations for international
+                        travel and for finding low-priced hotel rooms.
+                    </p>
+                    <a href="#" class="primary-btn">Discover Now</a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
+                <div class="booking-form">
+                    <h3>Booking Your Hotel</h3>
+                    <form asp-action="Search" asp-controller="Rooms">
+                        <div class="check-date">
+                            <label for="date-in">Check In:</label>
+                            <input type="text" class="date-input" id="date-in">
+                            <i class="icon_calendar"></i>
+                        </div>
+                        <div class="check-date">
+                            <label for="date-out">Check Out:</label>
+                            <input type="text" class="date-input" id="date-out">
+                            <i class="icon_calendar"></i>
+                        </div>
+                        <div class="check-date">
+                            <label for="type">Room:</label>
+                            <input type="text" name="type">
+                        </div>
+                        <div class="check-date">
+                            <label for="type">Capacity:</label>
+                            <input type="text" name="capacity">
+                        </div>
+                        <div class="check-date">
+                            <label for="type">Min Price:</label>
+                            <input type="text" name="minPrice">
+                        </div>
+                        <div class="check-date">
+                            <label for="type">Max Price:</label>
+                            <input type="text" name="maxPrice">
+                        </div>
+                        <button type="submit">Search For Rooms</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-slider owl-carousel">
+        <div class="hs-item set-bg" data-setbg="assets/img/hero/hero-1.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="assets/img/hero/hero-2.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="assets/img/hero/hero-3.jpg"></div>
+    </div>
+</section>
+<!-- Hero Section End -->
+<!-- About Us Section Begin -->
+<section class="aboutus-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-text">
+                    <div class="section-title">
+                        <span>About Us</span>
+                        <h2>Intercontinental LA <br />Westlake Hotel</h2>
+                    </div>
+                    <p class="f-para">
+                        Sirius Hotel offers you a privileged experience combining comfort and conviviality. Whether you are a backpacker, a solo traveler or with your family, our hotel with top-of-the-range service will meet all your expectations. More than just a hotel, Sirius Hotel offers you a place to live and meet people.
+                    </p>
+                    <a asp-action="Index" asp-controller="AboutUs" class="primary-btn about-btn">Read More</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-pic">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img src="~/assets/img/about/about-1.jpg" alt="">
+                        </div>
+                        <div class="col-sm-6">
+                            <img src="~/assets/img/about/about-2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Us Section End -->
+<!-- Services Section Begin -->
+<section class="services-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>What We Do</span>
+                    <h2>Discover Our Services</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.ServiceGetDtos)
+            {
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service-item">
+                        <i class="@item.Icon"></i>
+                        <h4>@item.Name</h4>
+                        <p>@item.Description</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- Services Section End -->
+<!-- Home Room Section Begin -->
+<section class="hp-room-section">
+    <div class="container-fluid">
+        <div class="hp-room-items">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="hp-room-item set-bg" data-setbg="assets/img/room/room-b1.jpg">
+                        <div class="hr-text">
+                            <h3>Double Room</h3>
+                            <h2>140$<span>/Pernight</span></h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td>30 m²</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td>Max persion 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Bed:</td>
+                                        <td>Queen bed</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Services:</td>
+                                        <td>Wifi, Television, Bathroom,...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a asp-action="Index" asp-controller="RoomDetails" class="primary-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="hp-room-item set-bg" data-setbg="assets/img/room/room-b2.jpg">
+                        <div class="hr-text">
+                            <h3>Premium King Room</h3>
+                            <h2>159$<span>/Pernight</span></h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td>40 m²</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td>Max persion 3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Bed:</td>
+                                        <td>King Beds</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Services:</td>
+                                        <td>Wifi, Television, Bathroom,...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a asp-action="Index" asp-controller="RoomDetails" class="primary-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="hp-room-item set-bg" data-setbg="assets/img/room/room-b3.jpg">
+                        <div class="hr-text">
+                            <h3>Deluxe Room</h3>
+                            <h2>300$<span>/Pernight</span></h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td>60 m²</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td>Max persion 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Bed:</td>
+                                        <td>Double beds</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Services:</td>
+                                        <td>Wifi, Television, Bathroom,...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a asp-action="Index" asp-controller="RoomDetails" class="primary-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="hp-room-item set-bg" data-setbg="assets/img/room/room-b4.jpg">
+                        <div class="hr-text">
+                            <h3>Luxury Room</h3>
+                            <h2>120$<span>/Pernight</span></h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td>30 m²</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td>Max persion 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Bed:</td>
+                                        <td>Twin bed</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Services:</td>
+                                        <td>Wifi, Television, Bathroom,...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a asp-action="Index" asp-controller="RoomDetails" class="primary-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Home Room Section End -->
+<!-- Testimonial Section Begin -->
+<section class="testimonial-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Testimonials</span>
+                    <h2>What Customers Say?</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="testimonial-slider owl-carousel">
+                    @foreach (var item in Model.TestimonialGetDtos)
+                    {
+                        <div class="ts-item">
+                            <p>@item.Comment</p>
+                            <div class="ti-author">
+                                <div class="rating">
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star-half_alt"></i>
+                                </div>
+                                <h5> - @item.CustomerName</h5>
+                            </div>
+                            <img src="~/assets/img/testimonial-logo.png" alt="">
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonial Section End -->
+<!-- Blog Section Begin -->
+<section class="blog-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Hotel News</span>
+                    <h2>Our Blog & Event</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="blog-item set-bg" data-setbg="assets/img/blog/blog-1.jpg">
+                    <div class="bi-text">
+                        <span class="b-tag">Travel Trip</span>
+                        <h4><a href="#">Tremblant In Canada</a></h4>
+                        <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog-item set-bg" data-setbg="assets/img/blog/blog-2.jpg">
+                    <div class="bi-text">
+                        <span class="b-tag">Camping</span>
+                        <h4><a href="#">Choosing A Static Caravan</a></h4>
+                        <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog-item set-bg" data-setbg="assets/img/blog/blog-3.jpg">
+                    <div class="bi-text">
+                        <span class="b-tag">Event</span>
+                        <h4><a href="#">Copper Canyon</a></h4>
+                        <div class="b-time"><i class="icon_clock_alt"></i> 21th April, 2019</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="blog-item small-size set-bg" data-setbg="assets/img/blog/blog-wide.jpg">
+                    <div class="bi-text">
+                        <span class="b-tag">Event</span>
+                        <h4><a href="#">Trip To Iqaluit In Nunavut A Canadian Arctic City</a></h4>
+                        <div class="b-time"><i class="icon_clock_alt"></i> 08th April, 2019</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog-item small-size set-bg" data-setbg="assets/img/blog/blog-10.jpg">
+                    <div class="bi-text">
+                        <span class="b-tag">Travel</span>
+                        <h4><a href="#">Traveling To Barcelona</a></h4>
+                        <div class="b-time"><i class="icon_clock_alt"></i> 12th April, 2019</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Section End -->
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    const btns = document.querySelectorAll(".submitbtn");
+    btns.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            Swal.fire(
+                'Room is available',
+                'Click button BOOKING NOW to reserve room'
+            )
+        })
+    })
+</script>

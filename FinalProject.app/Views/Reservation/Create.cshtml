@@ -1,0 +1,90 @@
+﻿@model ReservationCreateDto
+
+@{
+    ViewData["Title"] = "Reservation";
+}
+<div class="container">
+    <section class="h-100 h-custom" style="background-color: #dfa974;">
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center align-items-center">
+                <!--background-->
+                <h1 style="text-align:center">Reservation Form </h1>
+                <div class="booking-form-w3layouts">
+                    <!-- Form starts here -->
+                    <form method="post">
+                        <h2 class="sub-heading-agileits">Booking Details</h2>
+                        <div class="main-flex-w3ls-sectns">
+                            <div class="field-agileinfo-spc form-w3-agile-text1">
+                                <input asp-for="@Model.ArrivalDate" id="datepicker1" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="" />
+                            </div>
+                            <div class="field-agileinfo-spc form-w3-agile-text2">
+                                <input type="text" asp-for="@Model.ArrivalTime" class="timepicker form-control" value="Hrs:Min">
+                            </div>
+                        </div>
+                        <div class="main-flex-w3ls-sectns">
+                            <div class="field-agileinfo-spc form-w3-agile-text1">
+                                <input asp-for="@Model.DepartureDate" id="datepicker2" type="text" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="" />
+                            </div>
+                            <div class="field-agileinfo-spc form-w3-agile-text2">
+                                <input type="text" asp-for="@Model.DepartureTime" class="timepicker form-control" value="Hrs:Min">
+                            </div>
+                        </div>
+                        <div class="triple-wthree">
+                            <div class="field-agileinfo-spc form-w3-agile-text11">
+                                @Html.DropDownListFor(m=>m.Room, new SelectList(ViewBag.Rooms, "Value", "Text"), new {@class="form-control"})
+                            </div>
+                            <div class="field-agileinfo-spc form-w3-agile-text11">
+                                @Html.DropDownListFor(m=>m.NumberOfAdults, new SelectList(ViewBag.Adults, "Value", "Text"), new {@class="form-control"})
+                            </div>
+                            <div class="field-agileinfo-spc form-w3-agile-text22">
+                                @Html.DropDownListFor(m=>m.NumberOfChildren, new SelectList(ViewBag.Children, "Value", "Text"), new {@class="form-control"})
+                            </div>
+                            <div class="field-agileinfo-spc form-w3-agile-text33">
+                                @Html.DropDownListFor(m=>m.NumberOfInfants, new SelectList(ViewBag.Infants, "Value", "Text"), new {@class="form-control"})
+                            </div>
+                        </div>
+                        <div class="field-agileinfo-spc form-w3-agile-text">
+                            <textarea asp-for="@Model.Message" placeholder="Any Message..."></textarea>
+                        </div>
+                        <h3 class="sub-heading-agileits">Personal Details</h3>
+                        <div class="main-flex-w3ls-sectns">
+                            <div class="field-agileinfo-spc form-w3-agile-text1">
+                                <input type="text" asp-for="@Model.FullName" placeholder="Full Name" required="">
+                            </div>
+                            <div class="field-agileinfo-spc form-w3-agile-text2">
+                                <input type="text" asp-for="@Model.PhoneNumber" placeholder="Phone Number" required="">
+                            </div>
+                        </div>
+                        <div class="field-agileinfo-spc form-w3-agile-text">
+                            <input type="email" asp-for="@Model.Email" placeholder="Email" required="">
+                        </div>
+                        <div class="clear"></div>
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Clear Form">
+                        <div class="clear"></div>
+                    </form>
+                    <!--// Form starts here -->
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script type="text/javascript" src="~/reservation/js/jquery-2.2.3.min.js"></script>
+<!-- Time Js -->
+<script type="text/javascript" src="~/reservation/js/wickedpicker.js"></script>
+<script type="text/javascript">
+    $('.timepicker,.timepicker1').wickedpicker({
+        twentyFour: false
+    });
+</script>
+<!--// Time Js -->
+<!-- Calendar -->
+<link rel="stylesheet" href="~/reservation/css/jquery-ui.css" />
+<script src="~/reservation/js/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+    });
+</script>
+<!-- //Calendar -->

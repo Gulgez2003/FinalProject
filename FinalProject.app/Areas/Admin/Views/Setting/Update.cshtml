@@ -1,0 +1,64 @@
+﻿@model SettingUpdateDto
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="conatiner-fluid content-inner mt-5 py-0">
+    <div class="header-title">
+        <h4 class="card-title">Update Settings</h4>
+    </div>
+    <hr />
+    <div>
+        <div class="bd-example">
+            <form method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="@Model.settingGetDto.Id" />
+                <div class="mb-3">
+                    <label asp-for="@Model.settingPostDto.Information" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.settingPostDto.Information" value="@Model.settingGetDto.Information">
+                    <span asp-validation-for="@Model.settingPostDto.Information" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.settingPostDto.PhoneNumber" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.settingPostDto.PhoneNumber" value="@Model.settingGetDto.PhoneNumber">
+                    <span asp-validation-for="@Model.settingPostDto.PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.settingPostDto.Email" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.settingPostDto.Email" value="@Model.settingGetDto.Email">
+                    <span asp-validation-for="@Model.settingPostDto.Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.settingPostDto.Address" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.settingPostDto.Address" value="@Model.settingGetDto.Address">
+                    <span asp-validation-for="@Model.settingPostDto.Address" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.settingPostDto.FaceBookIcon" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.settingPostDto.FaceBookIcon" value="@Model.settingGetDto.FaceBookIcon">
+                    <span asp-validation-for="@Model.settingPostDto.FaceBookIcon" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.settingPostDto.TwitterIcon" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.settingPostDto.TwitterIcon" value="@Model.settingGetDto.TwitterIcon">
+                    <span asp-validation-for="@Model.settingPostDto.TwitterIcon" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.settingPostDto.InstagramIcon" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.settingPostDto.InstagramIcon" value="@Model.settingGetDto.InstagramIcon">
+                    <span asp-validation-for="@Model.settingPostDto.InstagramIcon" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.settingPostDto.YoutubeIcon" class="form-label"></label>
+                    <input type="text" class="form-control" asp-for="@Model.settingPostDto.YoutubeIcon" value="@Model.settingGetDto.YoutubeIcon">
+                    <span asp-validation-for="@Model.settingPostDto.YoutubeIcon" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button asp-controller="Setting" asp-action="Index" class="btn btn-light">Back to List</button>
+            </form>
+        </div>
+    </div>
+</div>
+

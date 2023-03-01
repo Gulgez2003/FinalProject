@@ -1,0 +1,57 @@
+﻿@model List<ReservationGetDto>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="conatiner-fluid content-inner mt-5 py-0">
+    <div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Reservations</h4>
+                        </div>
+                    </div>
+                    <div class="card-body px-0">
+                        <div class="table-responsive">
+                            <table id="user-list-table" class="table table-striped" role="grid" data-toggle="data-table">
+                                <thead>
+                                    <tr class="ligth">
+                                        <th>Full Name</th>
+                                        <th>Phone Number</th>
+                                        <th>Email</th>
+                                        <th>Arrival Date & Time</th>
+                                        <th>Departure Date & Time</th>
+                                        <th>Room</th>
+                                        <th>Number Of Adults</th>
+                                        <th>Number Of Children</th>
+                                        <th>Number Of Infants</th>
+                                        <th>Message</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.FullName</td>
+                                            <td>@item.PhoneNumber</td>
+                                            <td>@item.Email</td>
+                                            <td>@item.ArrivalDateTime</td>
+                                            <td>@item.DepartureDateTime</td>
+                                            <td>@item.Room</td>
+                                            <td>@item.NumberOfAdults</td>
+                                            <td>@item.NumberOfChildren</td>
+                                            <td>@item.NumberOfInfants</td>
+                                            <td>@item.Message</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
